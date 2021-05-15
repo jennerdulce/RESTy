@@ -2,6 +2,26 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## LAB 26: Component Based UI -  Overview
+
+The purpose of this lab was to set up basic scaffolding of the application, with intent being to add more functionality to the system later.
+
+## Problem Domain
+
+The following user/developer stories detail the major functionality for this phase of the project.
+
+- As a user, I expect an easy to read and understand user interface so that I can use the application intuitively
+- As a user, I want to enter the URL to a REST API and select the REST method to use to access it
+- As a user, I want visual confirmation that my entries and selections are valid so that I have confidence the application will be able to fetch the API data that I’ve requested
+
+And as developers, here are the high level development tasks that address the above end user requirements
+
+- Create a visually appealing site with a Header, Footer, and a large content area
+- Create a form that asks for a URL
+- Create buttons that let the user choose from the REST methods (get, post, put, delete)
+When the form is filled out, and the button is clicked, display the URL and the method chosen
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -68,3 +88,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+![Whiteboard](./UML.jpg)
