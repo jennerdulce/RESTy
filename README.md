@@ -6,7 +6,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The purpose of this lab was to set up basic scaffolding of the application, with intent being to add more functionality to the system later.
 
+## LAB 27: Props and State -  Overview
+
+The purpose of this lab was to set up basic scaffolding of the application, with intent being to add more functionality to the system later.
+
 ## Problem Domain
+
+### LAB 26
 
 The following user/developer stories detail the major functionality for this phase of the project.
 
@@ -21,6 +27,12 @@ And as developers, here are the high level development tasks that address the ab
 - Create buttons that let the user choose from the REST methods (get, post, put, delete)
 When the form is filled out, and the button is clicked, display the URL and the method chosen
 
+### LAB 27
+
+The following user stories detail the major functionality for this phase of the project.
+
+- As a user, I want to enter the URL to an API and issue a GET request so that I can retrieve it’s data
+- As a user, I want to see the results returned from an API request in my browser in a readable format
 
 ## Available Scripts
 
