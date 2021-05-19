@@ -6,14 +6,14 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.props.handleGO}>
+      <form data-testid="formTest" onSubmit={this.props.handleGO}>
         <div>
-          URL: <input onChange={this.props.handleChange} type="text" name="urlInput" />
+          URL: <input data-testid="urlTest" onChange={this.props.handleChange} type="text" name="urlInput" />
           <button>GO!</button>
         </div>
         <div className="radio">
           <label>
-            <input onChange={this.props.handleChange} type="radio" name="method" value="get" />
+            <input data-testid="radioTest" onChange={this.props.handleChange} type="radio" name="method" value="get" />
             GET
           </label>
           <label>
@@ -31,9 +31,9 @@ class Form extends React.Component {
         </div>
         <div className="results">
           <p className="search">{this.props.search}</p>
-          <p className="results-output">
+          <div className="results-output">
             <Results resultHeaders={this.props.headers} searchResults={this.props.results}/>
-          </p>
+          </div>
         </div>
       </form>
     )
