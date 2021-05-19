@@ -1,13 +1,17 @@
 import React from 'react';
-import JSONPretty from 'react-json-prettify';
+// import JSONPretty from 'react-json-prettify';
+import { When } from 'react-if';
+import ReactJson from 'react-json-view'
 
-function Results({resultHeaders, searchResults}) {
+function Results({ resultHeaders, searchResults }) {
   return (
     <>
-    <h3>Headers</h3>
-    <JSONPretty json={resultHeaders} />
-    <h3>Results</h3>
-    <JSONPretty json={searchResults} />
+      <When condition={resultHeaders}>
+        <h3 aria-label="testHeader">Headers</h3>
+        <ReactJson src={resultHeaders} theme="ashes" />
+        <h3 aria-label="testHeader">Results</h3>
+        <ReactJson src={searchResults} theme="ashes" />
+      </When>
     </>
   )
 }

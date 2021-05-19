@@ -18,7 +18,9 @@ class App extends React.Component {
 
   handleGO = async (e) => {
     e.preventDefault()
+    console.log('in handleGo', this.state.method, this.state.urlInput)
     if (this.state.method === 'get' && this.state.urlInput) {
+      
       this.setState(
         { ...this.state, search: `${this.state.method} ${this.state.urlInput}` }
       )
@@ -31,9 +33,9 @@ class App extends React.Component {
     }
   }
 
-
   // Dynamic
   handleChange = (e) => {
+    // console.log(e.target.name , e.target.value)
     this.setState(
       { ...this.state, [e.target.name]: e.target.value }
     )
@@ -50,7 +52,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Form
+        <Form 
           handleChange={this.handleChange}
           handleGO={this.handleGO}
           search={this.state.search}

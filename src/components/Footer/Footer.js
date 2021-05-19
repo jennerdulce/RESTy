@@ -4,7 +4,7 @@ import React from 'react';
 class Footer extends React.Component {
   render() {
     return (
-      <footer>
+      <footer data-testid="footerTest">
         &copy; Code Fellows
       </footer>
     )
