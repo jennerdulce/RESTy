@@ -4,7 +4,8 @@ import Form from './components/Form/Form';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Content from './components/Content/Content';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class App extends React.Component {
       headers: '',
       results: '',
       searchHistory: [
-        [{ search: 'Dummy Data', urlInput: 'someUrl INput', headers: 'Some Header Json Data', results: 'Some big JSON' }]
+        { search: 'Dummy Data', urlInput: 'someUrl INput', headers: 'Some Header Json Data', results: 'Some big JSON' },{ search: 'Dummy Data', urlInput: 'someUrl INput', headers: 'Some Header Json Data', results: 'Some big JSON' },{ search: 'Dummy Data', urlInput: 'someUrl INput', headers: 'Some Header Json Data', results: 'Some big JSON' }
       ]
     }
   }
@@ -46,6 +47,7 @@ class App extends React.Component {
         })
     }
   }
+  
 
   // Dynamic
   handleChange = (e) => {
@@ -68,13 +70,18 @@ class App extends React.Component {
         <div className="App">
           <Header />
           <Navbar />
-          <Form
-            handleChange={this.handleChange}
-            handleGO={this.handleGO}
-            search={this.state.search}
-            results={this.state.results}
-            headers={this.state.headers}
-          />
+          <Route path="/">
+            <Form
+              handleChange={this.handleChange}
+              handleGO={this.handleGO}
+              search={this.state.search}
+              results={this.state.results}
+              headers={this.state.headers}
+            />
+          </Route>
+          <Route path="/history">
+            <Content searchHistory={this.state.searchHistory}/>
+          </Route>
           <Footer />
         </div>
       </Router>
