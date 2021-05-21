@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import Header from './components/Header/Header';
 import Form from './components/Form/Form';
+import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,22 +14,34 @@ class App extends React.Component {
       method: '',
       search: '',
       headers: '',
-      results: ''
+      results: '',
+      searchHistory: [
+        [{ search: 'Dummy Data', urlInput: 'someUrl INput', headers: 'Some Header Json Data', results: 'Some big JSON' }]
+      ]
     }
   }
-
   handleGO = async (e) => {
     e.preventDefault()
     console.log('in handleGo', this.state.method, this.state.urlInput)
     if (this.state.method === 'get' && this.state.urlInput) {
-      
+
       this.setState(
         { ...this.state, search: `${this.state.method} ${this.state.urlInput}` }
       )
       await axios.get(this.state.urlInput)
         .then(res => {
           this.setState(
-            { ...this.state, headers: res.headers, results: res.data.results }
+            {
+              ...this.state,
+              headers: res.headers,
+              results: res.data.results,
+              searchHistory: [...this.state.searchHistory, {
+                urlInput: this.state.urlInput,
+                search: this.state.search,
+                headers: this.state.headers,
+                results: this.state.headers
+              }]
+            }
           );
         })
     }
@@ -50,17 +64,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Form 
-          handleChange={this.handleChange}
-          handleGO={this.handleGO}
-          search={this.state.search}
-          results={this.state.results}
-          headers={this.state.headers}
-        />
-        <Footer />
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <Navbar />
+          <Form
+            handleChange={this.handleChange}
+            handleGO={this.handleGO}
+            search={this.state.search}
+            results={this.state.results}
+            headers={this.state.headers}
+          />
+          <Footer />
+        </div>
+      </Router>
     )
   }
 }
