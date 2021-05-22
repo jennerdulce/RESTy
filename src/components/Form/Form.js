@@ -9,7 +9,7 @@ class Form extends React.Component {
       <div>
         <form data-testid="formTest" onSubmit={this.props.handleGO}>
           <div>
-            URL: <input data-testid="urlTest" onChange={this.props.handleChange} type="text" name="urlInput" />
+            URL: <input data-testid="urlTest" onChange={this.props.handleChange} type="text" name="urlInput" value={this.props.urlInput}/>
             <button>GO!</button>
           </div>
           <div className="radio">
@@ -30,11 +30,14 @@ class Form extends React.Component {
             DELETE
           </label>
           </div>
+          <textarea onChange={this.props.handleChange} name="body" cols="40" rows="10" placeholder="Type here..."></textarea>
         </form>
         <Content
           search={this.props.search}
           results={this.props.results}
-          headers={this.props.headers} />
+          headers={this.props.headers}
+          searchHistory={this.props.searchHistory}
+          handleClick={this.props.handleClick} />
       </div>
     )
   }
