@@ -1,0 +1,14 @@
+.search {
+  & > ul {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & > li {
+      margin-bottom:.8em;
+      list-style-type: none;
+      cursor: pointer;
+    }
+  }
+}
