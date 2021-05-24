@@ -1,0 +1,32 @@
+h2 {
+  font-size: 40px;
+  text-align: center;
+}
+
+div.helpbg {
+  background-color: rgb(185, 185, 185);
+  padding: 30px
+}
+
+div.help {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+
+  & > p {
+    text-align: center;
+    font-size: 24px;
+    width: 80%
+  }
+  & > h3 {
+    font-size: 30px;
+    text-decoration: underline;
+  }
+
+  & > img {
+    width: 1000px
+  }
+}
+

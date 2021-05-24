@@ -1,13 +1,8 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "title": "some title",
-      "author": "stephen king",
+      "title": "here I changed the title",
+      "author": "title changed",
       "id": 2
     },
     {
@@ -23,15 +18,39 @@
       "title": "hello test",
       "author": "hello some test author",
       "id": 5
-    }
-  ],
-  "comments": [
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "title": "The Alechemist",
+      "author": "LL Cool J",
+      "id": 6
+    },
+    {
+      "title": "hello test",
+      "author": "hello some test author",
+      "id": 8
+    },
+    {
+      "title": "hello test",
+      "author": "hello some test author",
+      "id": 9
+    },
+    {
+      "title": "testing",
+      "author": "testr",
+      "id": 10
+    },
+    {
+      "title": "changing the title",
+      "author": "new author here",
+      "id": 11
+    },
+    {
+      "title": "hello test",
+      "author": "hello some test author",
+      "id": 12
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
